@@ -37,7 +37,7 @@ if (isset($_POST['btncalc'])) {
 		</div>
 
 		<div id="form">
-			<form name="frmcalculadora" method="post" action="calculadora_simples.php">
+			<form name="frmcalculadora" method="post" action="index.php">
 				Valor 1:<input type="text" name="txtn1" value="<?= ($valor1); ?>"> <br>
 				Valor 2:<input type="text" name="txtn2" value="<?= ($valor2); ?>"> <br>
 				<div id="container_opcoes">
