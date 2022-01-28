@@ -3,7 +3,6 @@
 $valor1 = (float) 0;
 $valor2 = (float) 0;
 $resultado = (float) 0;
-$operacao = (string) $_POST['rdocalc'];
 
 if (isset($_POST['btncalc'])) {
 	$valor1 = $_POST['txtn1'];
@@ -45,6 +44,7 @@ if (isset($_POST['btncalc'])) {
 					<input type="radio" name="rdocalc" value="subtrair">Subtrair <br>
 					<input type="radio" name="rdocalc" value="multiplicar">Multiplicar <br>
 					<input type="radio" name="rdocalc" value="dividir">Dividir <br>
+					$operacao = (string) $_POST['rdocalc'];
 
 					<input type="submit" name="btncalc" value="Calcular">
 
