@@ -3,10 +3,13 @@
 $valor1 = (float) 0;
 $valor2 = (float) 0;
 $resultado = (float) 0;
+$operacao = (string) null;
 
 if (isset($_POST['btncalc'])) {
 	$valor1 = $_POST['txtn1'];
 	$valor2 = $_POST['txtn2'];
+
+	$operacao = $_POST['rdocalc'];
 
 	if ($_POST['txtn1'] == "" || $_POST['txtn2'] == "") {
 		echo ('verificar se todos os valores foram preenchidos');
@@ -52,7 +55,6 @@ if (isset($_POST['btncalc'])) {
 					<input type="radio" name="rdocalc" value="subtrair" <?= ($operacao == "subtrair") ? "checked" : '' ?>>Subtrair <br>
 					<input type="radio" name="rdocalc" value="multiplicar" <?= ($operacao == "multiplicar") ? "checked" : '' ?>>Multiplicar <br>
 					<input type="radio" name="rdocalc" value="dividir" <?= ($operacao == "dividir") ? "checked" : '' ?>>Dividir <br>
-					$operacao = (string) $_POST['rdocalc'];
 					<input type="submit" name="btncalc" value="Calcular">
 
 				</div>
