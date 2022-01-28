@@ -12,7 +12,7 @@ if (isset($_POST['btncalc'])) {
 		echo ('verificar se todos os valores foram preenchidos');
 	} else {
 		if (!is_numeric($valor1) || !is_numeric($valor2)) {
-			echo (' <p class="msgErro"> Todos os valores digitados devem ser números válidos! </p>');
+			echo ('Todos os valores digitados devem ser números válidos!');
 		} else {
 			if ($_POST['rdocalc'] == "somar") {
 				$resultado = ($valor1 + $valor2);
