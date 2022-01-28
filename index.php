@@ -9,19 +9,27 @@ if (isset($_POST['btncalc'])) {
 	$valor1 = $_POST['txtn1'];
 	$valor2 = $_POST['txtn2'];
 
-	if ($_POST['rdocalc'] == "somar") {
-		$resultado = ($valor1 + $valor2);
-	} elseif ($_POST['rdocalc'] == "subtrair") {
-		$resultado = ($valor1 - $valor2);
-	} elseif ($_POST['rdocalc'] == "multiplicar") {
-		$resultado = ($valor1 * $valor2);
+	if ($_POST['txtn1'] == "" || $_POST['txtn2'] == "") {
+		echo ('verificar se todos os valores foram preenchidos');
 	} else {
-		$resultado = ($valor1 / $valor2);
+		if (!is_numeric($valor1) || !is_numeric($valor2)) {
+			echo (' <p class="msgErro"> Todos os valores digitados devem ser números válidos! </p>');
+		} else {
+			if ($_POST['rdocalc'] == "somar") {
+				$resultado = ($valor1 + $valor2);
+			} elseif ($_POST['rdocalc'] == "subtrair") {
+				$resultado = ($valor1 - $valor2);
+			} elseif ($_POST['rdocalc'] == "multiplicar") {
+				$resultado = ($valor1 * $valor2);
+			} else {
+				$resultado = ($valor1 / $valor2);
+			}
+		}
 	}
 }
 
-?>
 
+?>
 <html>
 
 <head>
@@ -42,9 +50,9 @@ if (isset($_POST['btncalc'])) {
 				Valor 2:<input type="text" name="txtn2" value="<?= ($valor2); ?>"> <br>
 				<div id="container_opcoes">
 					<input type="radio" name="rdocalc" value="somar" <?= ($operacao == "somar") ? "checked" : '' ?>>Somar <br>
-					<input type="radio" name="rdocalc" value="subtrair">Subtrair <br>
-					<input type="radio" name="rdocalc" value="multiplicar">Multiplicar <br>
-					<input type="radio" name="rdocalc" value="dividir">Dividir <br>
+					<input type="radio" name="rdocalc" value="subtrair" <?= ($operacao == "subtrair") ? "checked" : '' ?>>Subtrair <br>
+					<input type="radio" name="rdocalc" value="multiplicar" <?= ($operacao == "multiplicar") ? "checked" : '' ?>>Multiplicar <br>
+					<input type="radio" name="rdocalc" value="dividir" <?= ($operacao == "dividir") ? "checked" : '' ?>>Dividir <br>
 
 					<input type="submit" name="btncalc" value="Calcular">
 
