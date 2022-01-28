@@ -3,7 +3,6 @@
 $valor1 = (float) 0;
 $valor2 = (float) 0;
 $resultado = (float) 0;
-$operacao = (string) $_POST['rdocalc'];
 
 if (isset($_POST['btncalc'])) {
 	$valor1 = $_POST['txtn1'];
