@@ -52,7 +52,7 @@ if (isset($_POST['btncalc'])) {
 					<input type="radio" name="rdocalc" value="subtrair" <?= ($operacao == "subtrair") ? "checked" : '' ?>>Subtrair <br>
 					<input type="radio" name="rdocalc" value="multiplicar" <?= ($operacao == "multiplicar") ? "checked" : '' ?>>Multiplicar <br>
 					<input type="radio" name="rdocalc" value="dividir" <?= ($operacao == "dividir") ? "checked" : '' ?>>Dividir <br>
-
+					$operacao = (string) $_POST['rdocalc'];
 					<input type="submit" name="btncalc" value="Calcular">
 
 				</div>
